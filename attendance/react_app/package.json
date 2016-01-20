@@ -1,0 +1,25 @@
+{
+  "name": "checkin-react",
+  "author": "Mark Ignacio <mignacio@hackucf.org>",
+  "scripts": {
+    "bundle": "browserify -t [babelify --presets [ es2015 react ] ] src/main.js -o ../static/attendance.bundle.js"
+  },
+  "main": "src/main.js",
+  "devDependencies": {},
+  "private": true,
+  "license": "GPL-3.0",
+  "dependencies": {
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.0",
+    "classnames": "^2.2.3",
+    "cookie": "^0.2.3",
+    "flux": "^2.1.1",
+    "moment": "^2.11.1",
+    "react": "^0.14.6",
+    "react-addons-update": "^0.14.6",
+    "react-datetime": "^2.0.2",
+    "react-dom": "^0.14.6"
+  }
+}

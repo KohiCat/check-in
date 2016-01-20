@@ -1,0 +1,398 @@
+html {
+    font-family: "Segoe UI", sans-serif;
+    background: #1d1d1d;
+    color: #efefef;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h6, h6, legend {
+    font-weight: 200;
+    margin: 0;
+}
+
+#content {
+    height: 100%;
+}
+
+h1.title {
+    font-size: 46px;
+    margin: 0;
+}
+
+.checkin-box {
+    overflow: hidden;
+    height: 100%;
+}
+
+.event-list-box {
+    float: left;
+    width: 40%;
+    height: 100%;
+}
+
+.attendance-box {
+    margin-left: 40%;
+    width: 60%;
+    border-left: 2px solid #555;
+    height: 100%;
+}
+
+.event-list-box:focus,
+.attendance-box:focus {
+    outline: none;
+}
+
+.title {
+    text-align: center;
+    padding-top: 0.83em;
+    padding-bottom: 0.83em;
+    border-bottom: 2px solid #444;
+}
+
+.clear {
+    clear: both
+}
+
+.modal-blackout {
+    display: none;
+}
+
+.event-modal {
+    display: none;
+    position: absolute;
+
+    width: 23rem;
+    left: 50%;
+    top: 20%;
+    margin-left: -12.5rem;
+
+    background: #1d1d1d;
+    font-size: 1.1rem;
+    padding: 1rem;
+    border: 2px solid #444;
+    z-index: 999;
+}
+
+.modal-blackout.visible {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 998;
+}
+
+.event-modal.visible {
+    display: table;
+}
+
+.event-modal > .title {
+    text-align: center;
+    padding-top: 0;
+}
+
+#event-modal-form {
+    padding-top: 1rem;
+}
+
+#event-modal-form input {
+    font-size: 1.1rem;
+}
+
+#event-modal-form label {
+    display: inline-block;
+    width: 8rem;
+}
+
+#event-modal-form .rdt {
+    display: inline-block;
+    position: relative;
+}
+
+.rdtOpen .rdtPicker {
+    display: block;
+}
+
+.rdtPicker {
+    display: none;
+    background: #1d1d1d;
+    position: absolute;
+    width: 250px;
+    padding: 4px;
+    margin-top: 1px;
+    z-index: 999999999 !important;
+    border: 1px solid #666;
+}
+
+.rdtPicker table {
+    width: 100%;
+    margin: 0;
+}
+
+.rdtPicker th {
+    border-bottom: 1px solid #666;
+}
+
+.rdtPicker thead tr:first-child th {
+    cursor: pointer;
+}
+
+/*.rdtPicker thead tr:first-child th:hover {*/
+.rdtPicker th:hover,
+.rdtPicker td:hover {
+    background: #444;;
+}
+
+.rdtPicker th.rdtNext,
+.rdtPicker th.rdtPrev {
+    vertical-align: top;
+}
+
+.rdtPicker button {
+    border: none;
+    color: #efefef;
+    background: none;
+    cursor: pointer;
+}
+
+.rdtPicker thead button {
+    width: 100%;
+    height: 100%;
+}
+
+.rdtPicker td,
+.rdtPicker th {
+    text-align: center;
+    height: 28px;
+    cursor: pointer;
+}
+
+.rdtPicker .dow {
+    width: 14.2857%;
+    border-bottom: none;
+}
+
+.rdtPicker td.rdtOld,
+.rdtPicker td.rdtNew {
+    color: #999;
+}
+
+.rdtPicker td.rdtActive {
+    background-color: #428bca;
+    color: white;
+}
+
+.rdtPicker td.rdtToday {
+    position: relative;
+}
+
+.rdtPicker td.rdtToday:before {
+    content: '';
+    display: inline-block;
+    border-left: 7px solid transparent;
+    border-bottom: 7px solid #428bca;
+    border-top-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+}
+
+.rdtPicker td.rdtToday.rdtActive:before {
+    border-bottom-color: white;
+}
+
+.rdtPicker .rdtTime td {
+    cursor: default;
+}
+
+.rdtPicker .rdtTime td:hover {
+    background: #1d1d1d;
+}
+
+.rdtCounters {
+    display: inline-block;
+}
+
+.rdtCounters > div {
+    float: left;
+}
+
+.rdtCounter {
+    width: 40px;
+    height: 100px;
+}
+
+.rdtCounter .rdtBtn {
+    height: 40%;
+    line-height: 40px;
+    cursor: pointer
+}
+
+.rdtCounter .rdtBtn:hover {
+    background: #444;
+}
+
+.rdtCounter .rdtCount {
+    height: 20%;
+}
+
+.rdtCounterSeparator {
+    line-height: 100px;
+}
+
+#event-modal-form .buttons {
+    text-align: right;
+    margin-top: 1rem;
+}
+
+#event-modal-form .buttons > .delete {
+    background-color: darkred;
+    border: 3px solid #1d1d1d;
+}
+
+#event-modal-form .buttons > .delete:hover {
+    background-color: red;
+}
+
+#event-modal-form .buttons > input {
+    background: #343434;
+    border-radius: 3px;
+    border: 3px solid transparent;
+    padding: 2px 1rem;
+    color: #efefef;
+    cursor: pointer;
+    margin-right: 0.5rem;
+}
+
+#event-modal-form .buttons > input:last-child {
+    margin-right: 0;
+}
+
+#event-modal-form .buttons > input:hover {
+    background: #434343;
+}
+
+.event-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.event-list > li {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #555;
+    margin: auto;
+
+    font-size: 1.2rem;
+    text-align: center;
+
+    cursor: pointer;
+}
+
+.event-list > li.selected {
+    background: #303030;
+}
+
+.event-list > li:hover,
+.event-list > li.selected:hover {
+    background: #444;
+}
+
+.event-list > .add-event {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 0;
+}
+
+.event-list .event-info {
+    position: relative;
+}
+
+.event-list .event-info > .edit-button {
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    line-height: 1.2rem;
+    top: 0;
+    right: 4px;
+    background: #1d1d1d;
+    border: 1px solid #999;
+}
+
+.event-list .event-info > .edit-button:hover {
+    background: #999;
+}
+
+.attendance-box.no-event .attendance-form,
+.attendance-box.no-event .log {
+    display: none;
+}
+
+.attendance-form .status {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.attendance-form .status-symbol {
+    text-align: center;
+    font-size: 6rem;
+    width: 6.4rem;
+    height: 6.4rem;
+    line-height: 6rem;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin: auto;
+}
+
+.attendance-form .status-symbol.not-ready {
+    color: yellow;
+    border-color: yellow;
+}
+
+.attendance-form .status-symbol.ready {
+    color: #00a500;
+    border-color: #00a500;
+}
+
+.attendance-box .status-symbol.error {
+    color: #f10000;
+    border-color: #f10000;
+}
+
+.attendance-form .status > .message {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 3rem;
+}
+
+.attendance-box .log {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding: 1rem;
+    border: 1px solid #333;
+    overflow-y: auto;
+    max-height: 55%;
+}
+
+.attendance-box .log > table.logs {
+    width: 100%;
+}
+
+.attendance-box .log > h3 {
+    text-align: center;
+    font-weight: bold;
+}
