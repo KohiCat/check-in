@@ -21,6 +21,7 @@ RUN npm install
 RUN npm run-script bundle
 
 WORKDIR /opt/check-in/code
+
 RUN useradd django
 RUN chown -R django:django /opt/check-in
 CMD sh docker-run.sh
