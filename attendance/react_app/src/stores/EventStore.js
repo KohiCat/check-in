@@ -155,7 +155,7 @@ var EventStore = Object.assign({}, EventEmitter.prototype, {
   loadEverything: function () {
     APIClient.loadEverything().then(function (events) {
       events.forEach(function (item) {
-        item.datetime = moment(item.datetime);
+        item.datetime = moment(item.datetime * 1000);
         for (let i = 0; i < item.logs.length; i++) {
           item.logs[i].timestamp = moment(item.logs[i].timestamp * 1000);
         }
